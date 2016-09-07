@@ -1,0 +1,12 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <ul class="list-group">
+      <li class="list-group-item" repeat.for="rule of rules" if.bind="rule.isActive">
+        <!--disabled.bind="!ds.connected"-->
+        <button class="btn btn-primary ${ds.connected ? '' : 'disabled'}" if.bind="rule.activationType === 'Manual'" click.delegate="run(rule.id)">EXECUTE</button>
+        ${rule.id} (${rule.description})
+      </li>
+    </ul>
+  </section>
+</template>

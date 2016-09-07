@@ -1,0 +1,16 @@
+<template>
+  <require from="../helpers/ObjectKeysValueConverter"></require>
+  <require from="../helpers/ObjectValuesValueConverter"></require>
+
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <ul class="list-group" >
+      <li class="list-group-item" repeat.for="key of features | objectValues">
+        <span>${key}</span>
+        <ul class="list-unstyled">
+          <li repeat.for="feature of features[key] | objectKeys"> - ${feature.id}</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</template>
